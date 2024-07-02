@@ -12,7 +12,7 @@ def getAnswer(question, rightAnswer):
   return answer
 
 
-msg = getAnswer("первый этап", 'кроманьонец')
+msg = getAnswer("первый этап", '1')
 
 print(msg)
 
