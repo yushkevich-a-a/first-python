@@ -1,16 +1,22 @@
+countRightAnswer = 0
+
 def getAnswer(question, rightAnswer):
+  global countRightAnswer
   count = 2
   print(question)
   answer = input().lower().strip()
   rightAnswer = rightAnswer.lower().strip()
   while (rightAnswer != answer):
     if count == 0:
-      return ">>>не указан<<<"
+      return ("x" * len(rightAnswer))
     print('неверно, попыток:', count)
     answer = input().lower().strip()
     count -= 1
-  print('принято')
+  print('Верно')
+  countRightAnswer += 1
   return answer
+
+
 
 
 stage1 = getAnswer("укажите первый этап эволюции человека", "Dryopithecus")
@@ -20,4 +26,8 @@ stage4 = getAnswer("укажите четвертый этап эволюции 
 stage5 = getAnswer("укажите пятый этап эволюции человека", "Homo Sapiens Neanderthalensis")    
 stage6 = getAnswer("укажите шастой этап эволюции человека", "Homo Sapiens Sapiens")    
 
+
 print( stage1, stage2, stage3, stage4, stage5, stage6, sep=' => ')
+# результат  при правильном указании периодов: dryopithecus => ramapithecus => australopithecus => homo erectus => homo sapiens neanderthalensis => homo sapiens sapiens
+
+print("правильно указанных периодов:", countRightAnswer, "из 6")
